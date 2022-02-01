@@ -16,4 +16,4 @@ const init = (selectorApp, title) => {
     });
 };
 
-init('.app','Выберите тур');
+init('.app','Выберите тур'); 
