@@ -25,18 +25,31 @@ const createFormPerson = (n)=> {
         placeholder: 'Введите ваше ФИО',
         required: true,
     });
-
-    const ticketNumber = createElement('input',{
-        className:'field__input',
-        id: `ticket${n}`,
-        name:'name',
-        type:'text',
-        placeholder:"Номер билета",
-        minLength:'10',
-        maxLength:'10',
-    });
     
-    fieldName.append(labelName,inputName, ticketNumber);
+    fieldName.append(labelName,inputName,);
+
+    const fieldTicket = createElement('div', {
+        className: 'field',
+    });
+
+    const labelTicet = createElement('label', {
+        className: 'field__label',
+        for: 'ticket${n}',
+        textContent: 'Номер билета (10 цифр)',
+    });
+
+    const inputTicket = createElement('input',{
+        className: 'field__input',
+        id: 'ticket${n}',
+        name: 'ticket',
+        type: 'text',
+        placeholder: 'Номер билета',
+        required: true,
+        minLength: 10,
+        maxLength: 10,
+    });
+
+    fieldTicket.append(labelTicet,inputTicket);
 
     const button = createElement('button', {
         className:'btn-confirm',
@@ -44,7 +57,7 @@ const createFormPerson = (n)=> {
         textContent: 'Подтвердить',
     });
 
-    form.append(title,fieldName,button);
+    form.append(title,fieldName,fieldTicket,button);
 
     return form;
 };
